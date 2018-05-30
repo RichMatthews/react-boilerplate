@@ -2,11 +2,12 @@
   "name": "testing-dir",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Form.js",
   "scripts": {
     "test": "mocha --require ignore-styles setup.js --compilers js:babel-core/register 'src/**/*.spec.js'",
     "watch": "webpack --watch",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "flow": "flow"
   },
   "repository": {
     "type": "git"
@@ -14,16 +15,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
     "enzyme": "^2.7.1",
+    "flow-bin": "^0.72.0",
     "ignore-styles": "^5.0.1",
     "jsdom": "9.11.0",
     "jsdom-global": "2.1.1",
     "mocha": "^3.2.0",
     "node-hook": "^0.4.0",
-    "node-sass": "^4.2.0",
+    "node-sass": "^4.7.2",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "sass-loader": "^4.1.1",
@@ -47,10 +50,12 @@
     "express": "^4.14.0",
     "history": "^1.17.0",
     "isomorphic-fetch": "^2.2.1",
-    "react": "^15.4.2",
+    "query-string": "^6.1.0",
+    "react": "^15.6.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.6",
     "react-router": "^2.8.1",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "webpack": "^1.12.2",
     "webpack-config": "^6.1.2"
