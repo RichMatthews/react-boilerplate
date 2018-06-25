@@ -8,15 +8,17 @@ class Users extends React.Component {
   };
 
   componentDidMount() {
-    // console.log("loading...");
-    // axios.get("/users").then(response => {
-    //   console.log(response, "this is the response");
-    // });
+    console.log("loading...");
+    axios.get("/fetchUsers").then(response => {
+      this.setState(() => ({
+        users: response.data
+      }));
+    });
   }
 
   render() {
     console.log(this.state, "the state");
-    return <div> Users </div>;
+    return <div> Users: {JSON.stringify(this.state.users)} </div>;
   }
 }
 
