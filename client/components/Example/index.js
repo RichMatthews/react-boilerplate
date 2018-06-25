@@ -1,20 +1,33 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
+import axios from "axios";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import Home from "../Home";
+import Users from "../Users";
 // import './index.scss';
 
-export const Example = ({myState}) => (
-  <div>
-    I am working and I am stateless, this is my state: <b>{myState}</b>
-  </div>
-)
+class Example extends React.Component {
+  render() {
+    const { mystate } = this.props;
+    return (
+      <div>
+        <Router>
+          <div>
+            <Route path="/" exact component={Home} />
+            <Route path="/users" exact component={Users} />
+          </div>
+        </Router>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   myState: state.myState
 });
 
-const mapDispatchToProps = dispatch => ({
-
-})
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(
   mapStateToProps,
