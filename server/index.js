@@ -15,12 +15,12 @@ app.get("/", function(req, res) {
 //   res.json(tryFetch);
 // });
 
-app.get("/users", async (req, res) => {
+app.get("/fetchUsers", async (req, res) => {
   console.log("a get request");
   var getData = await fetch("https://jsonplaceholder.typicode.com/users");
   var response = await getData.json();
-  console.log(response, "the response");
-  res.send(json);
+  res.write(response);
+  // res.json(response);
 });
 
 app.listen(process.env.PORT || 8050);

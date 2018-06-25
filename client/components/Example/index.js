@@ -9,13 +9,12 @@ import Users from "../Users";
 
 class Example extends React.Component {
   render() {
-    const { mystate } = this.props;
     return (
       <div>
         <Router>
           <div>
             <Route path="/" exact component={Home} />
-            <Route path="/users" exact component={Users} />
+            <Route path="/users" component={Users} />
           </div>
         </Router>
       </div>
